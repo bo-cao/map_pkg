@@ -13,6 +13,9 @@
   <!-- RViz -->
   <node pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find publish_pointcloud)/rviz/OctomapShow.rviz"/>
 
+
+
+
 </launch>
 
  
