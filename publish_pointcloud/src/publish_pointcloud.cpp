@@ -30,6 +30,8 @@ int main (int argc, char **argv)
     
 	std::string topic,path,frame_id;
         int hz=5;
+		int count=0;
+
 
 	ros::init (argc, argv, "publish_pointcloud");  
 	ros::NodeHandle nh("~");  
@@ -47,7 +49,6 @@ int main (int argc, char **argv)
 	pcl::toROSMsg(cloud,output);// 转换成ROS下的数据类型 最终通过topic发布
 
 	output.header.stamp=ros::Time::now();
-	output.header.frame_id  =frame_id;
 
 	cout<<"path = "<<path<<endl;
 	cout<<"frame_id = "<<frame_id<<endl;
@@ -62,4 +63,6 @@ int main (int argc, char **argv)
 		loop_rate.sleep();  
 	}  
 	return 0;  
+
+
 }  
